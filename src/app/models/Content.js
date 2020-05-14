@@ -14,6 +14,12 @@ class Content extends Model {
 
     return this;
   }
+  /**
+   * Relationship with attaches, where we are making reference with attach_id attribute
+   *
+   * Relationship with modules, where we are making reference to de the models through other
+   * table created by the relation many to many between content and modules
+   */
 
   static associate(models) {
     this.belongsTo(models.Attach, {

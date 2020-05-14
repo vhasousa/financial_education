@@ -25,6 +25,24 @@ class User extends Model {
     return this;
   }
 
+  /**
+   *Relationship with school, where we are making reference to de the tables schools and grades through other
+   *table created by the relation many to many between schools and grades
+   */
+
+  static associate(models) {
+    this.belongsTo(models.School, {
+      foreignKey: 'school_id',
+      through: 'educational_stage',
+      as: 'schools',
+    });
+    this.belongsTo(models.Grade, {
+      foreignKey: 'grade_id',
+      through: 'educational_stage',
+      as: 'grades',
+    });
+  }
+
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
   }

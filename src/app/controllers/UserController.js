@@ -17,6 +17,21 @@ class UserController {
 
     return res.json({ name, email, student });
   }
+
+  async index(req, res) {
+    const user = await User.findAll({
+      attributes: ['name'],
+      include: [
+        {
+          association: 'schools',
+          attributes: ['name'],
+        },
+        { association: 'grades', attributes: ['number', 'level'] },
+      ],
+    });
+
+    return res.json(user);
+  }
 }
 
 export default new UserController();
