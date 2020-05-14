@@ -12,7 +12,7 @@ class LessonController {
 
   async index(req, res) {
     /**
-     * Searching for all the content through modules
+     * Searching for all the content through modules in the lessons
      */
 
     const lesson = await Lesson.findAll({

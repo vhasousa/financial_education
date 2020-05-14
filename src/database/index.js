@@ -5,8 +5,9 @@ import Module from '../app/models/Module';
 import Lesson from '../app/models/Lesson';
 import Content from '../app/models/Content';
 import Attach from '../app/models/Attach';
+import User from '../app/models/User';
 
-const models = [Module, Lesson, Content, Attach];
+const models = [Module, Lesson, Content, Attach, User];
 
 class Database {
   constructor() {
