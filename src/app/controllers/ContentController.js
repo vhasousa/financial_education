@@ -1,10 +1,11 @@
 import Content from '../models/Content';
+import Module from '../models/Module';
 
 class ContentController {
   async store(req, res) {
-    const content = await Content.create(req.body);
+    const contents = await Content.create(req.body);
 
-    return res.json(content);
+    return res.json(contents);
   }
 }
 

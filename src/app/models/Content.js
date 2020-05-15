@@ -22,14 +22,11 @@ class Content extends Model {
    */
 
   static associate(models) {
-    this.belongsTo(models.Attach, {
-      foreignKey: 'attach_id',
-      as: 'attaches',
-    });
+    this.belongsTo(models.Attach, { foreignKey: 'attach_id', as: 'attaches' });
     this.belongsToMany(models.Module, {
-      foreignKey: 'module_id',
       through: 'module_contents',
       as: 'modules',
+      foreignKey: 'content_id',
     });
   }
 }

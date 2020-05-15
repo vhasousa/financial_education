@@ -4,10 +4,10 @@ import { promisify } from 'util';
 import authConfig from '../../config/auth';
 
 export default async (req, res, next) => {
-  const authHeader = req.headers.authoriazation;
+  const authHeader = req.headers.authorization;
 
   if (!authHeader) {
-    return res.json(401).json({ message: 'Token is invalid' });
+    return res.status(401).json({ message: 'Token is invalid' });
   }
 
   const [, token] = authHeader.split(' ');

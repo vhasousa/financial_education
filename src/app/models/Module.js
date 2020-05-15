@@ -17,9 +17,9 @@ class Module extends Model {
 
   static associate(models) {
     this.belongsToMany(models.Content, {
-      foreignKey: 'content_id',
       through: 'module_contents',
       as: 'contents',
+      foreignKey: 'module_id',
     });
   }
 }
