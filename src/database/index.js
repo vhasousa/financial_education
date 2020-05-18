@@ -2,14 +2,14 @@ import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
 
 import Module from '../app/models/Module';
-// import Lesson from '../app/models/Lesson';
+import Lesson from '../app/models/Lesson';
 import Content from '../app/models/Content';
 import Attach from '../app/models/Attach';
-// import User from '../app/models/User';
-// import School from '../app/models/School';
-// import Grade from '../app/models/Grade';
+import User from '../app/models/User';
+import School from '../app/models/School';
+import Grade from '../app/models/Grade';
 
-const models = [Module, Content, Attach];
+const models = [Module, Content, Attach, School, Grade, Lesson, User];
 
 class Database {
   constructor() {

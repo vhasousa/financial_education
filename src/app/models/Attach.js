@@ -20,10 +20,6 @@ class Attach extends Model {
 
     return this;
   }
-
-  // static associate(models) {
-  //   this.belongsTo(models.Content);
-  // }
 }
 
 export default Attach;
