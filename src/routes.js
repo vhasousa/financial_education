@@ -25,6 +25,7 @@ routes.post('/schools', SchoolController.store);
 routes.post('/grades', GradeController.store);
 routes.post('/lessons', LessonController.store);
 routes.post('/users', UserController.store);
+routes.put('/users', UserController.update);
 routes.post('/sessions', SessionController.store);
 routes.get('/lessons', LessonController.index);
 routes.get('/modules', ModuleController.index);
