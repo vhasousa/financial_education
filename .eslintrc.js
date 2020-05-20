@@ -23,6 +23,7 @@ module.exports = {
     "class-methods-use-this": "off",
     "no-unused-vars": "off",
     camelcase: "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off"
   },
 };
