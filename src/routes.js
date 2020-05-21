@@ -28,10 +28,11 @@ routes.post('/grades', GradeController.store);
 routes.post('/lessons', LessonController.store);
 routes.post('/users', UserController.store);
 routes.post('/questions', QuestionController.store);
-routes.post('/answer', ScoreController.store);
+routes.post('/answer/:id', ScoreController.store);
 routes.put('/users', UserController.update);
 routes.post('/sessions', SessionController.store);
 routes.get('/lessons', LessonController.index);
 routes.get('/modules', ModuleController.index);
+routes.get('/answer', ScoreController.index);
 
 export default routes;

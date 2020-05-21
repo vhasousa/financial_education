@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import User from '../models/User';
+import QuestionDone from '../schemas/QuestionDone';
 
 class UserController {
   async store(req, res) {
@@ -24,7 +25,9 @@ class UserController {
       return res.status(400).json({ message: 'User already exists' });
     }
 
-    const { name, password, student } = await User.create(req.body);
+    const { id, name, password, student } = await User.create(req.body);
+
+    await QuestionDone.create({ user_id: id });
 
     return res.json({ name, email, student });
   }

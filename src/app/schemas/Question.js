@@ -1,6 +1,8 @@
 import mongoose from 'mongoose';
 
-const QuestionSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+
+const QuestionSchema = new Schema({
   description: String,
   alternatives: [
     {

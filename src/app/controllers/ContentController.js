@@ -7,6 +7,13 @@ class ContentController {
 
     return res.json(contents);
   }
+
+  // async index(req, res) {
+  //   const content = await Content.findAll({
+  //     attributes: ['id'],
+  //     include: [{ association: 'module',  }],
+  //   });
+  // }
 }
 
 export default new ContentController();
