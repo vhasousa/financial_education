@@ -1,4 +1,5 @@
 import Sequelize from 'sequelize';
+import mongoose from 'mongoose';
 import databaseConfig from '../config/database';
 
 import Module from '../app/models/Module';
@@ -14,6 +15,7 @@ const models = [Module, Content, Attach, School, Grade, Lesson, User];
 class Database {
   constructor() {
     this.init();
+    this.mongo();
   }
 
   init() {
@@ -24,6 +26,13 @@ class Database {
       .map(
         (model) => model.associate && model.associate(this.connection.models)
       );
+  }
+
+  mongo() {
+    this.connectionMongo = mongoose.connect('mongodb://localhost:27017/tcc', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
   }
 }
 

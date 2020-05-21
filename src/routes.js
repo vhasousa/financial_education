@@ -12,6 +12,8 @@ import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import GradeController from './app/controllers/GradeController';
 import SchoolController from './app/controllers/SchoolController';
+import QuestionController from './app/controllers/QuestionController';
+import ScoreController from './app/controllers/ScoreController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -25,6 +27,8 @@ routes.post('/schools', SchoolController.store);
 routes.post('/grades', GradeController.store);
 routes.post('/lessons', LessonController.store);
 routes.post('/users', UserController.store);
+routes.post('/questions', QuestionController.store);
+routes.post('/answer', ScoreController.store);
 routes.put('/users', UserController.update);
 routes.post('/sessions', SessionController.store);
 routes.get('/lessons', LessonController.index);
